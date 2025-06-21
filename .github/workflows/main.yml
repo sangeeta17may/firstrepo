@@ -1,0 +1,31 @@
+name: parameters # The name of your workflow, displayed in the GitHub UI
+
+on: # Defines when the workflow runs
+  workflow_dispatch:
+      inputs:
+        name:
+          description" "greet"
+          type: string
+          required: true
+          default: 'world'
+        city:
+          description: 'city name'
+          type: choice
+          options:
+             - 'new york'
+             - 'los angles'
+          isadmin:
+          description: "admin"
+          type: boolean
+          default: false
+
+jobs: # A workflow is made up of one or more jobs
+  greet: # This is the ID of the job
+    runs-on: ubuntu-latest # Specifies the type of runner that the job will run on
+
+    steps: # A job contains a sequence of tasks called steps
+      - name: Say Hello # A name for this specific step
+        run: echo "Hello from GitHub Actions!" # The command to execute
+    
+      - name: greeet user
+        run: echo "hello"

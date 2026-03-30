@@ -1,2 +1,1 @@
-i am great
-feature
+mpls and bgp config
